@@ -1,34 +1,28 @@
-/**
- * @module App
- * */
-
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { CartaoProfissional } from './components/CartaoProfissional'; // Importaremos depois
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // Dados de exemplo (props para os cartões)
+  const profissionais = [
+    { nome: 'Guilherme', cargo: 'Product Manager', email: 'guilherme@empresa.com' },
+    { nome: 'Ana Silva', cargo: 'Desenvolvedora Fullstack', email: 'ana@empresa.com' },
+    { nome: 'Carlos Mendes', cargo: 'Designer UI/UX', email: 'carlos@empresa.com' },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <h1>Equipe da Empresa</h1>
+      <div className="grid-cartoes">
+        {profissionais.map((prof, index) => (
+          <CartaoProfissional
+            key={index} // Chave única para React otimizar
+            nome={prof.nome}
+            cargo={prof.cargo}
+            email={prof.email}
+          />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">É só clicar pra ver a mágica</p>
-    </>
+    </div>
   );
 }
 

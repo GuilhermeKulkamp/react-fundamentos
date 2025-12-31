@@ -50,6 +50,14 @@ p {
   margin: 10px 0;
 }
 
+.conteudo-custom {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  font-style: italic;
+}
+
 button {
   background: #007bff;
   color: white;

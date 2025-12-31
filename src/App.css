@@ -70,3 +70,24 @@ button {
 button:hover {
   background: #0056b3;
 }
+
+.contador-section {
+  margin-top: 40px;
+  text-align: center;
+}
+.contator {
+  background: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.contator button {
+  background: #28a745;
+  margin-top: 10px;
+}
+
+.contator button:hover {
+  background: #218838;
+}

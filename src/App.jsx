@@ -1,5 +1,6 @@
 import { CartaoProfissional } from './components/CartaoProfissional'; // Importaremos depois
 import './App.css';
+import { ContadorVisualizacoes } from './components/ContadorVisualizacoes'; // Importa o componente de contador
 
 function App() {
   // Dados de exemplo (props para os cartões)
@@ -34,7 +35,6 @@ function App() {
   return (
     <div className="App">
       <h1>Equipe da Empresa</h1>
-
       <div className="grid-cartoes">
         {/* Uso normal do componente com props */}
         {profissionais.map((prof, index) => (
@@ -51,6 +51,9 @@ function App() {
         {/* Uso do componente com children */}
         <CartaoProfissional {...prof2}>
           <p>Especialista em Next.js e integrações API</p>
+          <div className="contador-section">
+            <ContadorVisualizacoes nome={prof2.nome} />
+          </div>
         </CartaoProfissional>
       </div>
     </div>

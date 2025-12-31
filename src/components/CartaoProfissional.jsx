@@ -8,6 +8,7 @@
 // Validação das props com PropTypes
 import PropTypes from 'prop-types'; // Importa PropTypes para validação
 import { Children } from 'react';
+import { ContadorVisualizacoes } from './ContadorVisualizacoes';
 
 // Definição do componente funcional
 CartaoProfissional.propTypes = {
@@ -48,6 +49,11 @@ export function CartaoProfissional({ nome, cargo, email, foto, telefone, childre
       <p className="cargo">{titulo}</p>
       {telefoneContato && <p>📞 {telefoneContato}</p>}
       <p className="email">📧 {emailContato}</p>
+
+      {/* Adiciona o contador de visualizações */}
+      <div className="contador-section">
+        <ContadorVisualizacoes nome={nome} />
+      </div>
 
       {/* Renderizar children se houver */}
       {children && <div className="conteudo-custom">{children}</div>}
